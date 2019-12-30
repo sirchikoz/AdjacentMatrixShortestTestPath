@@ -37,7 +37,27 @@ public class AdjacentMatrixShortTestPath {
       BellmanFord ford = new BellmanFord(vertices,0);
       System.out.println("Result:"+ford.run());
       ford.print(2);
+       System.out.println();
+       int[][] graph2Vertices = new int[5][5];
+       //graph contains vertices labeled s,t,x,y,z. In this case s=0,t=1 etc
+       graph2Vertices[0][1]=10;
+       graph2Vertices[0][3]=5;
+       
+       graph2Vertices[1][2]=1;
+       graph2Vertices[1][3]=2;
+       
+       graph2Vertices[2][4]=4;
       
+       graph2Vertices[3][1]=3;
+       graph2Vertices[3][2]=9;
+       graph2Vertices[3][4]=2;
+       
+       graph2Vertices[4][0]=7;
+       graph2Vertices[4][2]=6;
+       
+      Dijkstra dij = new Dijkstra(graph2Vertices,0);
+      dij.run();
+      dij.print(4);
     }
     
 }
